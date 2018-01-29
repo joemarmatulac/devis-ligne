@@ -39,8 +39,8 @@ var resource = {
     },
 
     delete: function () {
-        app.get(rpath.CLIENT_DEVIS_LIGNE_DELETE,(request, response) => {
-            response.send("Delete unsupported function...")
+        app.get(rpath.CLIENT_DEVIS_LIGNE_DELETE, (request, response) => {
+            qservice.quoteService.delete(request.params.id).then(res => response.end(res));
         });
     }
 }

@@ -40,6 +40,15 @@ var qservice = {
                 else resolve ('true')
             });
         });
+    },
+
+    delete: function(id){
+        return new Promise((resolve, reject) => {
+            conn.mysqlcon.query(q_queries.Q_CLIENT_DEVIS_LIGNE_DELETE, id, (err, result) => {
+                if(err) reject(err)
+                else resolve('true')
+            });
+        });
     }
 
 }

@@ -43,7 +43,7 @@ var resource = {
 
     delete: function () {
         app.get(rpath.CLIENT_DEVIS_DELETE,(request, response) => {
-            response.send("Delete unsupported function...")
+            qservice.quoteService.delete(request.params.id).then(res => response.end(res));
         });
     }
 }
