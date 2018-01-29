@@ -1,11 +1,13 @@
 {
   "APP_PING": "/api/ping",
 
+  "CLIENT_DEVIS_ADD" : "/api/devis/add",
   "CLIENT_DEVIS_BY_ID" : "/api/devis/byid/:id",
   "CLIENT_DEVIS_FINDALL" : "/api/devis/findall",
   "CLIENT_DEVIS_UPDATE" : "/api/devis/update",
   "CLIENT_DEVIS_DELETE" : "",
 
+  "CLIENT_DEVIS_LIGNE_ADD" : "/api/devis/ligne/add",
   "CLIENT_DEVIS_LIGNE_BYID" : "/api/devis/ligne/byid/:id",
   "CLIENT_DEVIS_LIGNE_ALL" : "/api/devis/ligne/findall",
   "CLIENT_DEVIS_LIGNE_UPDATE" : "/api/devis/ligne/update",

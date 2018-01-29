@@ -31,6 +31,15 @@ var qservice = {
                     }
                 });
         });
+    },
+
+    add: function (body) {
+        return new Promise((resolve, reject) => {
+            conn.mysqlcon.query(q_queries.Q_CLIENT_DEVIS_ADD,  body, (err, result) => {
+                if(err) reject(err)
+                else resolve ('true')
+            });
+        });
     }
 
 }

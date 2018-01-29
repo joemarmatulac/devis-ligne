@@ -12,12 +12,14 @@ devisAPI.res.ping_app();
 devisAPI.res.by_id();
 devisAPI.res.delete();
 devisAPI.res.find_all();
-devisAPI.res.update()
+devisAPI.res.update();
+devisAPI.res.add();
 
 devisligneAPI.init(app);
 devisligneAPI.res.by_id();
 devisligneAPI.res.find_all();
 devisligneAPI.res.update();
+devisligneAPI.res.add();
 
 app.use('/assets', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');

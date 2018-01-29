@@ -32,6 +32,12 @@ var resource = {
         });
     },
 
+    add: function () {
+        app.post(rpath.CLIENT_DEVIS_LIGNE_ADD, (request, response) => {
+            qservice.quoteService.add(request.body).then(devis => response.end(devis));
+        });
+    },
+
     delete: function () {
         app.get(rpath.CLIENT_DEVIS_LIGNE_DELETE,(request, response) => {
             response.send("Delete unsupported function...")

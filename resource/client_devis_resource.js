@@ -35,6 +35,12 @@ var resource = {
         });
     },
 
+    add: function () {
+        app.post(rpath.CLIENT_DEVIS_ADD, (request, response) => {
+           qservice.quoteService.add(request.body).then(devis => response.end(devis));
+        });
+    },
+
     delete: function () {
         app.get(rpath.CLIENT_DEVIS_DELETE,(request, response) => {
             response.send("Delete unsupported function...")
