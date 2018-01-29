@@ -1,5 +1,6 @@
 /*jshint esversion: 6*/
-var qservice = require('../service/quoteService');
+var qservice = require('../service/client_devis');
+var rpath = require('../config/resourcepath.json')
 var bodyParser = require('body-parser');
 var promise = require('promise');
 
@@ -13,31 +14,29 @@ function initExpress(exapp) {
 
 var resource = {
     ping_app: function () {
-        app.get('/api/ping', (request, response) => response.send('Ping Pong Ping Pong ...'));
+        app.get(rpath.CLIENT_DEVIS_PING, (request, response) => response.send('Ping Pong Ping Pong ...'));
     },
 
     by_id: function () {
-        app.get('/api/quote/byid/:id', (request, response) => {
+        app.get(rpath.CLIENT_DEVIS_BY_ID, (request, response) => {
             qservice.quoteService.find_byid(request.params.id).then(data => response.end(data));
         });
     },
 
     find_all: function () {
-        app.get('api/quote/findall', (request, response) => {
-            response.send("find all unsupported function...")
+        app.get(rpath.CLIENT_DEVIS_FINDALL, (request, response) => {
+            qservice.quoteService.find_all_clntdevis().then(data => response.end(data));
         });
     },
 
     update: function () {
-
-        app.post('/api/quote/update', (request, response) => {
-            response.end(qservice.quoteService.update(request.body))
-            //response.end(request.body.firstName);
+        app.post(rpath.CLIENT_DEVIS_UPDATE, (request, response) => {
+            qservice.quoteService.update(request.body).then(changed_rows => response.end(changed_rows));
         });
     },
 
     delete: function () {
-        app.get('/api/quote/del',(request, response) => {
+        app.get(rpath.CLIENT_DEVIS_DELETE,(request, response) => {
             response.send("Delete unsupported function...")
         });
     }

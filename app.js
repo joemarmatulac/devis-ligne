@@ -2,7 +2,7 @@
 var dotenv = require('dotenv').config();
 var express = require('express');
 var app = express();
-var clientQuoteApi = require('./resource/clientQuoteResourse');
+var clientQuoteApi = require('./resource/client_devis_resource');
 
 var port = process.env.PORT || 3000;
 

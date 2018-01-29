@@ -1,0 +1,7 @@
+{
+  "CLIENT_DEVIS_PING" : "/api/ping",
+  "CLIENT_DEVIS_BY_ID" : "/api/quote/byid/:id",
+  "CLIENT_DEVIS_FINDALL" : "/api/quote/findall",
+  "CLIENT_DEVIS_UPDATE" : "/api/quote/update",
+  "CLIENT_DEVIS_DELETE" : ""
+}
